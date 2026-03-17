@@ -2,14 +2,19 @@ import { AppService } from './app.service';
 export declare class AppController {
     private readonly appService;
     constructor(appService: AppService);
-    getAllTasks(): {
-        id: number;
+    getAllTasks(): Promise<{
         task: string;
-        completed: boolean;
-    }[];
-    createNewTask(task: string): {
         id: number;
-        task: string;
         completed: boolean;
-    };
+    }[]>;
+    createNewTask(task: string): Promise<{
+        task: string;
+        id: number;
+        completed: boolean;
+    }>;
+    deleteTask(id: string): Promise<{
+        task: string;
+        id: number;
+        completed: boolean;
+    }>;
 }

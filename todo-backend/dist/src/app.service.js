@@ -7,25 +7,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppService = void 0;
-let AppService = class AppService {
-    todos = [
-        { id: 1, task: 'Fix the router', completed: false },
-    ];
-    getTodos() {
-        return this.todos;
+const common_1 = require("@nestjs/common");
+const client_1 = require("@prisma/client");
+let AppService = class AppService extends client_1.PrismaClient {
+    async onModuleInit() {
+        await this.$connect();
     }
-    addTask(taskName) {
-        const newTodo = {
-            id: this.todos.length + 1,
-            task: taskName,
-            completed: false,
-        };
-        this.todos.push(newTodo);
-        return newTodo;
+    async getTodos() {
+        return this.task.findMany();
+    }
+    async addTask(taskName) {
+        return this.task.create({
+            data: {
+                task: taskName,
+                completed: false
+            },
+        });
+    }
+    async deleteTask(id) {
+        return this.task.delete({
+            where: { id: id },
+        });
     }
 };
 exports.AppService = AppService;
 exports.AppService = AppService = __decorate([
-    Injectable()
+    (0, common_1.Injectable)()
 ], AppService);
 //# sourceMappingURL=app.service.js.map

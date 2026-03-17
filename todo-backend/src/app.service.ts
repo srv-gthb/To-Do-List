@@ -1,26 +1,30 @@
-import { Injectable } from '@nestjs/common'; // <--- THIS WAS MISSING
+import { Injectable, OnModuleInit } from '@nestjs/common';
+import { PrismaClient } from '@prisma/client';
 
 @Injectable()
-export class AppService {
-  // Our temporary database
-  private todos = [
-    { id: 1, task: 'Fix the router', completed: false },
-    { id: 2, task: 'Finish Algebra 3 homework', completed: false },
-  ];
-
-  getTodos() {
-    return this.todos;
+export class AppService extends PrismaClient implements OnModuleInit {
+  // We leave the constructor out so Prisma uses the .env file automatically
+  
+  async onModuleInit() {
+    await this.$connect();
   }
 
-  addTask(taskName: string) {
-    // We have to define what 'newTodo' is before we can use it!
-    const newTodo = {
-      id: this.todos.length + 1,
-      task: taskName,
-      completed: false,
-    };
+  async getTodos() {
+    return this.task.findMany();
+  }
 
-    this.todos.push(newTodo);
-    return newTodo;
+  async addTask(taskName: string) {
+    return this.task.create({
+      data: { 
+        task: taskName,
+        completed: false 
+      },
+    });
+  }
+
+  async deleteTask(id: number) {
+    return this.task.delete({
+      where: { id: id },
+    });
   }
 }

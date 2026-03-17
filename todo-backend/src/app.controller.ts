@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from '@nestjs/common'; // Add Post and Body
+import { Controller, Get, Post, Delete, Body, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller('tasks')
@@ -10,9 +10,14 @@ export class AppController {
     return this.appService.getTodos();
   }
 
-  // Add this block:
   @Post()
   createNewTask(@Body('task') task: string) {
     return this.appService.addTask(task);
+  }
+
+  // Ensure this is INSIDE the class braces
+  @Delete(':id')
+  deleteTask(@Param('id') id: string) {
+    return this.appService.deleteTask(Number(id));
   }
 }

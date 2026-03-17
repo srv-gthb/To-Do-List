@@ -26,6 +26,9 @@ let AppController = class AppController {
     createNewTask(task) {
         return this.appService.addTask(task);
     }
+    deleteTask(id) {
+        return this.appService.deleteTask(Number(id));
+    }
 };
 exports.AppController = AppController;
 __decorate([
@@ -41,6 +44,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "createNewTask", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "deleteTask", null);
 exports.AppController = AppController = __decorate([
     (0, common_1.Controller)('tasks'),
     __metadata("design:paramtypes", [app_service_1.AppService])
