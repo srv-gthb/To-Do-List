@@ -5,14 +5,14 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-    @Get()
-      getAllTasks() {
-          return this.appService.getTodos();
-            }
+  @Get()
+  getAllTasks() {
+    return this.appService.getTodos();
+  }
 
-              // Add this block:
-                @Post()
-                  createNewTask(@Body('task') task: string) {
-                      return this.appService.addTask(task);
-                        }
-                        }
+  // Add this block:
+  @Post()
+  createNewTask(@Body('task') task: string) {
+    return this.appService.addTask(task);
+  }
+}
