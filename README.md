@@ -96,3 +96,6 @@ This project is for **educational purposes**. Passwords are stored in plaintext 
 
 - This project is intentionally backend-free so it can run on GitHub Pages. All data is stored locally in your browser.
 - If you want a server-backed version (e.g. with NestJS), you can add a simple API to persist data in a database.
+
+
+README file is made by ai idk what to say lol 
