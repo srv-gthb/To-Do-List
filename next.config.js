@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-
-module.exports = {
-  reactStrictMode: true,
-  output: 'export',
-  basePath,
-  assetPrefix: basePath,
-  trailingSlash: true,
+const nextConfig = {
+  output: 'export', // This is the magic line
+  images: {
+    unoptimized: true, // Required for GitHub Pages
+  },
 };
+export default nextConfig;
