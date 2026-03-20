@@ -1,0 +1,46 @@
+globalThis.__BUILD_MANIFEST = {
+  "pages": {
+    "/": [
+      "static/chunks/0dzooxbocyy8a.js",
+      "static/chunks/05hmo.an4n5-w.js",
+      "static/chunks/0j9hheff.8m~h.js",
+      "static/chunks/0hqqgn7cyav05.css",
+      "static/chunks/turbopack-013rnspvmnu-6.js"
+    ],
+    "/_app": [
+      "static/chunks/0apwjhri2cfrj.js",
+      "static/chunks/05hmo.an4n5-w.js",
+      "static/chunks/0j9hheff.8m~h.js",
+      "static/chunks/0mdzp-zc3and9.css",
+      "static/chunks/turbopack-0ymhyq_-vlrie.js"
+    ],
+    "/_error": [
+      "static/chunks/14si7c5f6xex_.js",
+      "static/chunks/05hmo.an4n5-w.js",
+      "static/chunks/0j9hheff.8m~h.js",
+      "static/chunks/turbopack-1635a_mxl3~wh.js"
+    ],
+    "/signup": [
+      "static/chunks/0-uh~7tvocar3.js",
+      "static/chunks/05hmo.an4n5-w.js",
+      "static/chunks/0j9hheff.8m~h.js",
+      "static/chunks/0hqqgn7cyav05.css",
+      "static/chunks/turbopack-0ne4d23y~1m8r.js"
+    ],
+    "/todos": [
+      "static/chunks/0t7dtkyfwwm1o.js",
+      "static/chunks/05hmo.an4n5-w.js",
+      "static/chunks/0j9hheff.8m~h.js",
+      "static/chunks/0hqqgn7cyav05.css",
+      "static/chunks/turbopack-0t~7v2krteufj.js"
+    ]
+  },
+  "devFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [
+    "static/NQj9stmwBvsdzvV-rS045/_buildManifest.js",
+    "static/NQj9stmwBvsdzvV-rS045/_ssgManifest.js",
+    "static/NQj9stmwBvsdzvV-rS045/_clientMiddlewareManifest.js"
+  ],
+  "rootMainFiles": []
+};
